@@ -1,11 +1,10 @@
-[index.html](https://github.com/user-attachments/files/24484069/index.html)
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#000000">
-  <title>???? ?????? ?????</title>
+  <title>پلیر آفلاین سلطان</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
@@ -28,47 +27,47 @@
 
   <!-- Top Bar -->
   <div class="p-6 text-center border-b border-white/10 bg-zinc-900/50">
-    <h1 class="text-2xl font-bold gold-grad">???? ?????? ?????</h1>
-    <p class="text-[10px] text-zinc-500 mt-1">???? ???? ?? ??????? ? ????????</p>
+    <h1 class="text-2xl font-bold gold-grad">پلیر آفلاین سلطان</h1>
+    <p class="text-[10px] text-zinc-500 mt-1">بدون نیاز به اینترنت و فیلترشکن</p>
   </div>
 
   <!-- Player Visual -->
   <div class="flex-1 flex flex-col items-center justify-center p-6">
     <div id="disk" class="w-56 h-56 rounded-full border-8 border-zinc-800 shadow-[0_0_50px_rgba(184,134,11,0.2)] bg-zinc-900 flex items-center justify-center vinyl-spin paused">
       <div class="w-16 h-16 rounded-full bg-black border-2 border-yellow-600 flex items-center justify-center">
-        ??
+        🎵
       </div>
     </div>
     <div class="mt-8 text-center">
-      <h2 id="track-name" class="text-xl font-bold">????? ???...</h2>
-      <p id="track-count" class="text-sm text-zinc-500 mt-2">????? ??????? ?? ?????? ????</p>
+      <h2 id="track-name" class="text-xl font-bold">آماده پخش...</h2>
+      <p id="track-count" class="text-sm text-zinc-500 mt-2">لطفاً آهنگ‌ها را انتخاب کنید</p>
     </div>
   </div>
 
   <!-- Controls + File Picker -->
   <div class="p-6 space-y-6 bg-zinc-900/80 rounded-t-[40px]">
     <div class="flex justify-center gap-10 items-center">
-      <button onclick="prev()" class="text-2xl text-zinc-400">?</button>
+      <button onclick="prev()" class="text-2xl text-zinc-400">⏮</button>
       <button onclick="toggle()" class="w-16 h-16 bg-yellow-600 rounded-full text-black text-2xl flex items-center justify-center">
-        <span id="p-icon">??</span>
+        <span id="p-icon">▶️</span>
       </button>
-      <button onclick="next()" class="text-2xl text-zinc-400">?</button>
+      <button onclick="next()" class="text-2xl text-zinc-400">⏭</button>
     </div>
 
     <div class="flex flex-col items-center">
       <label class="w-full py-4 bg-zinc-800 border border-dashed border-yellow-600/50 rounded-2xl text-center cursor-pointer hover:bg-zinc-700 transition">
         <span class="text-sm text-yellow-500">
-          ?????? ??????? ?? ????? ????
+          انتخاب آهنگ‌ها از حافظه گوشی
         </span>
         <input type="file" id="file-input" multiple accept="audio/*" class="hidden">
       </label>
       <p class="text-[10px] text-zinc-600 mt-2 text-center">
-        ??????? ??? ?? ????? ???? ??? ???????? ? ??? ???? ?? ??????? ???? ???????.
+        آهنگ‌ها فقط در حافظه گوشی شما می‌مانند و هیچ حجمی از اینترنت مصرف نمی‌شود.
       </p>
     </div>
 
     <div class="mt-4 text-center text-[10px] text-zinc-600">
-      ???? ????? ???? ????? ???? ??????
+      برای مهدی،یاور همیشه مومن داریوش 
     </div>
   </div>
 
@@ -91,7 +90,7 @@
         playlist = files;
         currentIdx = 0;
         loadTrack(0);
-        trackCount.innerText = `${files.length} ???? ???????? ??`;
+        trackCount.innerText = `${files.length} آهنگ بارگذاری شد`;
       }
     };
 
@@ -99,9 +98,9 @@
       const file = playlist[idx];
       trackName.innerText = file.name.replace(/\.[^/.]+$/, "");
       const url = URL.createObjectURL(file);
-      audio.src = url;
+      audio.src = url                                                                                                                         ;
       audio.play();
-      pIcon.textContent = "?";
+      pIcon.textContent = "⏸";
       disk.classList.remove('paused');
     }
 
@@ -109,11 +108,11 @@
       if (playlist.length === 0) return;
       if (audio.paused) {
         audio.play();
-        pIcon.textContent = "?";
+        pIcon.textContent = "⏸";
         disk.classList.remove('paused');
       } else {
         audio.pause();
-        pIcon.textContent = "??";
+        pIcon.textContent = "▶️";
         disk.classList.add('paused');
       }
     }
