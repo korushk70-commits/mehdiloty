@@ -1,0 +1,18 @@
+{
+  "name": "پلیر آفلاین سلطان",
+  "short_name": "سلطان پلیر",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/index.html?homescreen=1",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
